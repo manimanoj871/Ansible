@@ -1,0 +1,20 @@
+---
+- name: Create files and install tree package
+  hosts: localhost
+  become: yes  
+
+  tasks:
+    - name: Create reg.txt file
+      ansible.builtin.file:
+        path: /home/manikandan/73772121160.txt
+        state: touch
+
+    - name: Create regno file
+      ansible.builtin.file:
+        path: /home/manikandan/73772121160
+        state: touch
+
+    - name: Install tree package
+      ansible.builtin.package:
+        name: tree
+        state: present
